@@ -1,0 +1,420 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage[left=1.5cm, right=1.5cm, top=3cm, bottom=2cm]{geometry}
+
+% Настройка ссылок
+\usepackage[
+  unicode, pdftex, 
+  colorlinks=true, 
+  linkcolor=black, 
+  pdfhighlight=/P
+  ]{hyperref} 
+
+% Колонтитул
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Виногродский Серафим}
+\lhead{Домашние работы за первую четверть}
+\rfoot{Стр. \thepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hhline}
+\usepackage{indentfirst}
+% \usepackage{listings}
+% \usepackage{ifthen}
+% \usepackage{xparse}
+\usepackage{tikz}
+
+\title{Домашние работы за первую четверть}
+\author{Виногродский Серафим}
+
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{}
+\renewcommand{\theparagraph}{}
+
+\tikzset{
+  cir/.style = {circle, draw=black}
+}
+
+\begin{document}
+  \maketitle
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+  \pagebreak
+
+  \part{Задачи}
+
+  \section{Страницы 30 - 31}
+  \subsection{Задача 1}
+  По условию, только один поезд едит в Санкт-Петербург а всего поездов 8, значит 
+  происходит выбор из восьми различных вариантов. По формуле $ N = 2^{i} $
+  получаем:
+  \begin{equation*}
+    \begin{gathered}
+      8 = 2^{i} \\
+      i = 3
+    \end{gathered}
+  \end{equation*}
+
+  Количество информации равно 3 битам, значит пасажир не прав.
+
+  \subsection{Задача 2}
+  В данной ситуации происходит выбор из двую вариантов: либо обезьяна сидит в
+  первом вальере, либо во втором. По формуле $ N = 2^{i} $, получаем:
+  \begin{equation*}
+    \begin{gathered}
+      2 = 2^{i} \\
+      i = 1
+    \end{gathered}
+  \end{equation*}
+
+  Количество информации равно 1 биту, значит посетитель прав.
+
+  \subsection{Задача 3}
+  Для каждой из четырех пещер происходит выбор из двух вариантов, так что всего 
+  существует $ 2^{4} $ вариантов, значит по формуле $ N = 2^{i} $ мы получаем 
+  количествоинформации равное 4 битам, значит для кодирования сведений о расположении
+  кладов необходимо 4 или более бит.
+
+  \subsection{Задача 4}
+  Для первого клада существует выбор из четырех вариантов расположения, для второго --
+  из трех, так что всего существует $ 4 \times 3 = 12 $ вариантов расположения
+  двух кладов. Округляем в большую сторону до степени двойки и по формуле 
+  $ N = 2^{i} $ получаем $ i = 4 $, тоесть необходимо 4 бита информации.
+  
+  \subsection{Задача 5}
+  Аналогично прошлой задаче выбор происходит из 12 вариантов и необходимый 
+  обьем информации -- 4 бита. Каждый отдельный случай можно закодировать 
+  четырехзначным двоизным числом следующим образом: первые две цифры указывают 
+  на двоичный номер первого ключа уменьшенный на единицу, последние две -- на 
+  номер второго в том же формате. Приведенное высказывание будет закодировано 
+  как число 0111.
+
+  \subsection{Задача 14}
+  $ 8\ \text{Кб} = 2^{3} \times 2^{10} \times 2^{3}\ \text{бит} = 2^{16}\ \text{бит} $
+
+  \subsection{Задача 15}
+  $ \dfrac{1}{16}\ \text{Кб} = 2^{-4} \times 2^{10} \times 2^{3}\ \text{бит} = 2^{9}\ \text{бит} $
+
+  \subsection{Задача 16}
+  $ \dfrac{1}{512}\ \text{Мб} = 2^{-9} \times 2^{10} \times 2^{10} \times 2^{3}\ \text{бит} 
+    = 2^{14}\ \text{бит} $
+  
+
+  \section{Страницы 48 - 49}
+  \subsection{№1}
+  Структурирование информации -- это процесс ее организации.
+  Оно используется для облегчения ее восприятия и доступа к ней.
+
+  \subsection{№2}
+  Алфавитный (Лексикографический) порядок -- порядок сортировки упорядоченных 
+  контейнеров при котором для сравнения используется следующий алгоритм:
+  Если длины контейнеров не одинаковы, то меньшим считается контейнер меньшей 
+  длины. В ином случае сравниваются первые элементы контейнеров, и, если они 
+  равны, то алгоритм повторяется для хвостов контейнеров. В ином случае 
+  использьзуется результат сравнения элементов. Пустые контейнеры полагаются 
+  равными.
+
+  Типичным примером является порядок слов в словаре.
+
+  \subsection{№8}
+  Записать соответствие между номерами столбцов и строк и данными, находящимися
+  в ячейке.
+
+  \subsection{№9}
+  Дерево (Иерархия) -- это связаный ациклический граф.
+
+  Направленное дерево -- это связанный ациклический орграф, в котором любая вершина 
+  является конечной только для одной дуги.
+
+  \section{Страницы 74 - 75}
+  \subsection{Задача 5}
+  Ответ: ББААВА, БГАВА
+
+  \subsection{Задача 6}
+  Ответ: АДААВВ, АВГАВВ, АВВВААВВ, АВВБАВВ
+
+  \subsection{Задача 9}
+  Построение дерева по кодовой таблице показывает, что наименьшее значения для Г,
+  при котором выполнеяется условие Фано -- это 111.
+
+  \subsection{Задача 10}
+  Построение дерева по кодовой таблице показывает, что наименьшее значения для Г,
+  при котором выполнеяется условие Фано -- это 11.
+
+  \section{Страницы 97 - 99}
+  \subsection{Задача 3}
+  Из двух чисел с одинаковой записью, но разными основаниями систем счисления,
+  большим будет то, у которого больше основание. Исключение -- числа длиной в 
+  один знак будут равны.
+
+  Ответ: $ 11_{25} $
+
+  \subsection{Задача 4}
+  \begin{equation*}
+    \begin{gathered}
+      345_{6} = 6^2 \times 3 + 6 \times 4 + 5 = 108 + 24 + 5 = 137 \\
+      345_{7} = 7^2 \times 3 + 7 \times 4 + 5 = 147 + 28 + 5 = 180 \\
+      345_{8} = 8^2 \times 3 + 8 \times 4 + 5 = 192 + 32 + 5 = 229 \\
+      345_{9} = 9^2 \times 3 + 9 \times 4 + 5 = 243 + 36 + 5 = 284 \\
+    \end{gathered}
+  \end{equation*}
+
+  \subsection{Задача 22}
+  По схеме Горнера:
+  \begin{equation}
+    \label{eq:22gorner}
+    \begin{cases}
+      30 = (k_2p + k_1) p + k_0, \\
+      0 < k_2 < p, \\
+      0 \le k_1 < p, \\
+      0 \le k_0 < p, \\
+      k_0, k_1, k_2 \in \mathbb N 
+    \end{cases}
+  \end{equation}
+ 
+  При целочисленном делении обоих частей равенства на $ p $ получаем:
+  \begin{equation}
+    \label{eq:22div}
+    \left\lfloor \frac{30}{p} \right\rfloor = (k_2p + k_1)
+  \end{equation}
+
+  Поскольку $ k_2 > 0 $ и $ k_1 \ge 0 $, то $ p \le k_2p + k_1 $. 
+  Тогда по равенству \eqref{eq:22div} получаем: 
+  \begin{equation*}
+    p \le \left\lfloor \frac{30}{p} \right\rfloor \Longleftrightarrow p \le \left\lfloor \sqrt{30} \right\rfloor
+  \end{equation*}
+
+  Наибольшее значение $ p = \left\lfloor \sqrt{30} \right\rfloor = \sqrt{25} = 5 $
+
+  Ответ: 5
+
+  \subsection{Задача 23}
+  Аналогично прошлой задаче:
+  \begin{equation*}
+    p = \left\lfloor \sqrt{70} \right\rfloor = \sqrt{64} = 8
+  \end{equation*}
+
+  Ответ: 8
+
+  \subsection{Задача 30}
+  Сопоставим каждое слово с некторым числом, в котором в четверичной системе 
+  счисления каждой из букв А, К, Р и У соответствуют цифры 0, 1, 2 и 3
+  соответственно.
+
+  \begin{enumerate}
+    \item $ N = 4^{5} = 2^{10} = 1024 $
+    \item 
+      \begin{enumerate}
+        \item На 150-ом месте стоит слово, которому соответствует число $ 149 = 02111_4 $,
+      значит 150-ое слово -- это АРККК
+        \item На 250-ом месте стоит слово, которому соответствует число $ 249 = 03321_4 $,
+      значит 250-ое слово -- это АУУРК
+        \item На 350-ом месте стоит слово, которому соответствует число $ 349 = 11131_4 $,
+      значит 350-ое слово -- это КККУК
+        \item На 450-ом месте стоит слово, которому соответствует число $ 449 = 13001_4 $,
+      значит 450-ое слово -- это КУААК
+      \end{enumerate}
+    \item
+      \begin{enumerate}
+        \item Слову АКУРА соответствует число $ 01320_4 = 120 $, значит -- это 121-ое слово.
+        \item Слову КАРАУ соответствует число $ 10203_4 = 291 $, значит -- это 292-ое слово.
+        \item Слову РУКАА соответствует число $ 23100_4 = 720 $, значит -- это 721-ое слово.
+        \item Слову УКАРА соответствует число $ 31020_4 = 840 $, значит -- это 841-ое слово.
+        \item Слову УРАКА соответствует число $ 32010_4 = 900 $, значит -- это 901-ое слово.
+      \end{enumerate}
+    \item
+      Первому такому слову соответствует число $ 20000_4 = 512 $, значит -- это 513-ое слово.
+
+      Последнему такому слову соответствует число $ 23333_4 = 767 $, значит -- это 768-ое слово.
+  \end{enumerate}
+
+  \section{Страницы 176 - 177}
+  \subsection{Задача 1}
+
+  \subsubsection{а)}
+
+  \begin{tikzpicture}[level/.style={sibling distance=60mm/#1}, scale=0.6]
+  \node [cir] {$ \lor $}
+    child { 
+      node [cir] {$ \land $} 
+      child {node [cir] {A}} 
+      child {node [cir] {B}}
+      edge from parent node[above left] {$ \lnot $}
+    }
+    child { 
+      node [cir] {$ \land $}
+      child {node [cir] {A}}
+      child {node [cir] {B}}
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & $ \lnot (A \land B) \lor (A \land B) $ \\\hline
+    0 & 0 & 1 \\\hline
+    0 & 1 & 1 \\\hline
+    1 & 0 & 1 \\\hline
+    1 & 1 & 1 \\\hline
+  \end{tabular}
+
+  \subsubsection{б)}
+
+  \begin{tikzpicture}[level/.style={sibling distance=87mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lor $}
+    child { 
+      node [circle, draw=black] {$ \land $}
+      child { node [circle, draw=black] {A} }
+      child { node [circle, draw=black] {B} }
+    }
+    child {
+      node [circle, draw=black] {$ \lor $}
+      child { 
+        node [circle, draw=black] {$ \land $} 
+        child { 
+          node [circle, draw=black] {A} 
+          edge from parent node[above left] {$ \lnot $}
+        }
+        child { 
+          node [circle, draw=black] {B} 
+          edge from parent node[above right] {$ \lnot $}
+        }
+      }
+      child { 
+        node [circle, draw=black] {$ \land $} 
+        child { node [circle, draw=black] {A} }
+        child { 
+          node [circle, draw=black] {B} 
+          edge from parent node[above right] {$ \lnot $}
+        }
+      }
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & $ A \land B \lor \lnot A \land \lnot B \lor A \land \lnot B $ \\\hline
+    0 & 0 & 1 \\\hline
+    0 & 1 & 0 \\\hline
+    1 & 0 & 1 \\\hline
+    1 & 1 & 1 \\\hline
+  \end{tabular}
+
+  \subsubsection{в)}
+
+  \begin{tikzpicture}[level/.style={sibling distance=87mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \land  $}
+    child { 
+      node [circle, draw=black] {$ \lor  $}
+      child {
+        node [circle, draw=black] {A}
+      }
+      child {
+        node [circle, draw=black] {B}
+      }
+    }
+    child {
+      node [circle, draw=black] {$ \land  $} child {
+        node [circle, draw=black] {$ \lor  $}
+        child {
+          node [circle, draw=black] {A}
+          edge from parent node[above left] {$ \lnot  $}
+        }
+        child {
+          node [circle, draw=black] {B}
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+      child {
+        node [circle, draw=black] {$ \lor  $}
+        child {
+          node [circle, draw=black] {A}
+        }
+        child {
+          node [circle, draw=black] {B}
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & $ (A \lor B) \land (\lnot A \lor \lnot B) \land (A \lor \lnot B) $ \\\hline
+    0 & 0 & 0 \\\hline
+    0 & 1 & 0 \\\hline
+    1 & 0 & 1 \\\hline
+    1 & 1 & 0 \\\hline
+  \end{tabular}
+
+  \subsubsection{г)}
+  \begin{tikzpicture}[level/.style={sibling distance=87mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lor  $}
+    child { 
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {A}
+      }
+      child {
+        node [circle, draw=black] {B}
+        edge from parent node[above right] {$ \lnot  $}
+      }
+    }
+    child {
+      node [circle, draw=black] {$ \lor  $}
+      child {
+        node [circle, draw=black] {$ \land $}
+        child {
+          node [circle, draw=black] {B}
+        }
+        child {
+          node [circle, draw=black] {C}
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+      child {
+        node [circle, draw=black] {$ \land  $}
+        child {
+          node [circle, draw=black] {C}
+        }
+        child {
+          node [circle, draw=black] {A}
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+    };
+  \end{tikzpicture}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ A \land \lnot B \lor B \land \lnot C \lor C \land \lnot A $ \\\hline
+    0 & 0 & 0 & 0 \\\hline
+    0 & 0 & 1 & 1 \\\hline
+    0 & 1 & 0 & 1 \\\hline
+    0 & 1 & 1 & 1 \\\hline
+    1 & 0 & 0 & 1 \\\hline
+    1 & 0 & 1 & 1 \\\hline
+    1 & 1 & 0 & 1 \\\hline
+    1 & 1 & 1 & 0 \\\hline
+  \end{tabular}
+
+  \subsubsection{д)}
+
+  \pagebreak
+
+  \part{Сообщение}
+  \section{<<Графы в практических задачах>>}
+  
+\end{document}
