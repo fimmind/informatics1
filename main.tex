@@ -144,9 +144,13 @@
   Построение дерева по кодовой таблице показывает, что наименьшее значения для Г,
   при котором выполнеяется условие Фано -- это 111.
 
+  Ответ: 111
+
   \subsection{Задача 10}
   Построение дерева по кодовой таблице показывает, что наименьшее значения для Г,
   при котором выполнеяется условие Фано -- это 11.
+
+  Ответ: 11
 
   \section{Страницы 97 - 99}
   \subsection{Задача 3}
@@ -239,7 +243,6 @@
   \subsection{Задача 1}
 
   \subsubsection{а)}
-
   \begin{tikzpicture}[level/.style={sibling distance=60mm/#1}, scale=0.6]
   \node [cir] {$ \lor $}
     child { 
@@ -266,8 +269,8 @@
     1 & 1 & 1 \\\hline
   \end{tabular}
 
-  \subsubsection{б)}
 
+  \subsubsection{б)}
   \begin{tikzpicture}[level/.style={sibling distance=87mm/#1}, scale=0.6]
   \node [circle, draw=black] {$ \lor $}
     child { 
@@ -310,8 +313,8 @@
     1 & 1 & 1 \\\hline
   \end{tabular}
 
-  \subsubsection{в)}
 
+  \subsubsection{в)}
   \begin{tikzpicture}[level/.style={sibling distance=87mm/#1}, scale=0.6]
   \node [circle, draw=black] {$ \land  $}
     child { 
@@ -358,6 +361,7 @@
     1 & 0 & 1 \\\hline
     1 & 1 & 0 \\\hline
   \end{tabular}
+
 
   \subsubsection{г)}
   \begin{tikzpicture}[level/.style={sibling distance=87mm/#1}, scale=0.6]
@@ -410,11 +414,611 @@
     1 & 1 & 1 & 0 \\\hline
   \end{tabular}
 
+
   \subsubsection{д)}
+  \begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lor  $}
+    child { 
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {$ \land  $}
+        child {
+          node [circle, draw=black] {A}
+        }
+        child {
+          node [circle, draw=black] {B}
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+      child {
+        node [circle, draw=black] {C}
+      }
+    }
+    child {
+      node [circle, draw=black] {$ \lor  $}
+      child {
+        node [circle, draw=black] {$ \land  $}
+        child {
+          node [circle, draw=black] {$ \land  $}
+          child {
+            node [circle, draw=black] {A}
+            edge from parent node[above left] {$ \lnot  $}
+          }
+          child {
+            node [circle, draw=black] {B}
+          }
+        }
+        child {
+          node [circle, draw=black] {C}
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+      child {
+        node [circle, draw=black] {$ \land  $}
+        child {
+          node [circle, draw=black] {B}
+        }
+        child {
+          node [circle, draw=black] {C}
+        }
+      }
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ A \land \lnot B \land C \lor \lnot A \land B \land \lnot C \lor B \land C $ \\\hline
+    0 & 0 & 0 & 0 \\\hline
+    0 & 0 & 1 & 0 \\\hline
+    0 & 1 & 0 & 1 \\\hline
+    0 & 1 & 1 & 1 \\\hline
+    1 & 0 & 0 & 0 \\\hline
+    1 & 0 & 1 & 1 \\\hline
+    1 & 1 & 0 & 0 \\\hline
+    1 & 1 & 1 & 1 \\\hline
+  \end{tabular}
+
+
+  \subsubsection{е)}
+  \begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \land  $}
+    child { 
+      node [circle, draw=black] {A}
+    }
+    child {
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {$ \lor  $}
+        child {
+          node [circle, draw=black] {$ \land  $}
+          child {
+            node [circle, draw=black] {B}
+            edge from parent node[above left] {$ \lnot  $}
+          }
+          child {
+            node [circle, draw=black] {C}
+          }
+        }
+        child {
+          node [circle, draw=black] {A}
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+      child {
+        node [circle, draw=black] {$ \lor  $}
+        child {
+          node [circle, draw=black] {C}
+          edge from parent node[above left] {$ \lnot  $}
+        }
+        child {
+          node [circle, draw=black] {B}
+        }
+      }
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ A \land (\lnot B \land C \lor \lnot A) \land (\lnot C \lor B) $ \\\hline
+    0 & 0 & 0 & 0 \\\hline
+    0 & 0 & 1 & 0 \\\hline
+    0 & 1 & 0 & 0 \\\hline
+    0 & 1 & 1 & 0 \\\hline
+    1 & 0 & 0 & 0 \\\hline
+    1 & 0 & 1 & 0 \\\hline
+    1 & 1 & 0 & 0 \\\hline
+    1 & 1 & 1 & 0 \\\hline
+  \end{tabular}
+
+
+  \subsubsection{ж)}
+  \begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lor  $}
+    child { 
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {A}
+      }
+      child {
+        node [circle, draw=black] {C}
+      }
+      edge from parent node[above left] {$ \lnot  $}
+    }
+    child {
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {B}
+      }
+      child {
+        node [circle, draw=black] {C}
+        edge from parent node[above right] {$ \lnot  $}
+      }
+      edge from parent node[above right] {$ \lnot  $}
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ \lnot (A \land B) \lor \lnot (B \land \lnot C) $ \\\hline
+    0 & 0 & 0 & 1 \\\hline
+    0 & 0 & 1 & 1 \\\hline
+    0 & 1 & 0 & 1 \\\hline
+    0 & 1 & 1 & 1 \\\hline
+    1 & 0 & 0 & 1 \\\hline
+    1 & 0 & 1 & 1 \\\hline
+    1 & 1 & 0 & 0 \\\hline
+    1 & 1 & 1 & 1 \\\hline
+  \end{tabular}
+
+  \subsubsection{з)}
+  \begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lor  $}
+    child { 
+      node [circle, draw=black] {$ \lor  $}
+      child {
+        node [circle, draw=black] {A}
+      }
+      child {
+        node [circle, draw=black] {C}
+      }
+      edge from parent node[above left] {$ \lnot  $}
+    }
+    child {
+      node [circle, draw=black] {$ \lor  $}
+      child {
+        node [circle, draw=black] {B}
+      }
+      child {
+        node [circle, draw=black] {C}
+        edge from parent node[above right] {$ \lnot  $}
+      }
+      edge from parent node[above right] {$ \lnot  $}
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ \lnot (A \lor B) \lor \lnot (B \lor \lnot C) $ \\\hline
+    0 & 0 & 0 & 1 \\\hline
+    0 & 0 & 1 & 1 \\\hline
+    0 & 1 & 0 & 0 \\\hline
+    0 & 1 & 1 & 0 \\\hline
+    1 & 0 & 0 & 0 \\\hline
+    1 & 0 & 1 & 1 \\\hline
+    1 & 1 & 0 & 0 \\\hline
+    1 & 1 & 1 & 0 \\\hline
+  \end{tabular}
+
+
+  \subsubsection{и)}
+
+  \begin{tikzpicture}[level/.style={sibling distance=180mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lnot  $}
+    child { 
+      node [circle, draw=black] {$ \land  $}
+      child { 
+        node [circle, draw=black] {$ \land  $}
+        child {
+          node [circle, draw=black] {A}
+          edge from parent node[above left] {$ \lnot  $}
+        }
+        child {
+          node [circle, draw=black] {C}
+        }
+        edge from parent node[above left] {$ \lnot  $}
+      }
+      child { 
+        node [circle, draw=black] {$ \land  $}
+        child {
+          node [circle, draw=black] {B}
+          edge from parent node[above left] {$ \lnot  $}
+        }
+        child {
+          node [circle, draw=black] {C}
+        }
+        edge from parent node[above right] {$ \lnot  $}
+      }
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ \lnot (\lnot (\lnot A \land C) \land \lnot (\lnot B \land C)) $ \\\hline
+    0 & 0 & 0 & 0 \\\hline
+    0 & 0 & 1 & 1 \\\hline
+    0 & 1 & 0 & 0 \\\hline
+    0 & 1 & 1 & 1 \\\hline
+    1 & 0 & 0 & 0 \\\hline
+    1 & 0 & 1 & 1 \\\hline
+    1 & 1 & 0 & 0 \\\hline
+    1 & 1 & 1 & 0 \\\hline
+  \end{tabular}
+
+  \subsubsection{к)}
+  \begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lor  $}
+    child { 
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {A}
+      }
+      child {
+        node [circle, draw=black] {$ \lor $}
+        child {
+          node [circle, draw=black] {C}
+        }
+        child {
+          node [circle, draw=black] {$ \land  $}
+          child {
+            node [circle, draw=black] {B}
+          }
+          child {
+            node [circle, draw=black] {C}
+            edge from parent node[above right] {$ \lnot  $}
+          }
+        }
+      }
+    }
+    child {
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {C}
+      }
+      child {
+        node [circle, draw=black] {$ \lor  $}
+        child {
+          node [circle, draw=black] {A}
+        }
+        child {
+          node [circle, draw=black] {B}
+        }
+        edge from parent node[above right] {$ \lnot  $}
+      }
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ A \land (C \lor B \land \lnot C) \lor C \land \lnot (A \lor B) $ \\\hline
+    0 & 0 & 0 & 0 \\\hline
+    0 & 0 & 1 & 1 \\\hline
+    0 & 1 & 0 & 0 \\\hline
+    0 & 1 & 1 & 0 \\\hline
+    1 & 0 & 0 & 0 \\\hline
+    1 & 0 & 1 & 1 \\\hline
+    1 & 1 & 0 & 1 \\\hline
+    1 & 1 & 1 & 1 \\\hline
+  \end{tabular}
+
+
+  \subsubsection{л)}
+  \begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+  \node [circle, draw=black] {$ \lor  $}
+    child { 
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {A}
+      }
+      child {
+        node [circle, draw=black] {$ \lor  $}
+        child {
+          node [circle, draw=black] {C}
+        }
+        child {
+          node [circle, draw=black] {$ \lor  $}
+          child {
+            node [circle, draw=black] {B}
+            edge from parent node[above left] {$ \lnot  $}
+          }
+          child {
+            node [circle, draw=black] {C}
+          }
+          edge from parent node[above right] {$ \lnot  $}
+        }
+      }
+    }
+    child {
+      node [circle, draw=black] {$ \land  $}
+      child {
+        node [circle, draw=black] {B}
+      }
+      child {
+        node [circle, draw=black] {$ \land  $}
+        child {
+          node [circle, draw=black] {A}
+        }
+        child {
+          node [circle, draw=black] {C}
+        }
+        edge from parent node[above right] {$ \lnot  $}
+      }
+    };
+  \end{tikzpicture}
+
+  \rule{0cm}{0cm}
+
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    A & B & C & $ A \land (C \lor \lnot (\lnot B \lor C)) \lor B \land \lnot (A \land C) $ \\\hline
+    0 & 0 & 0 & 0 \\\hline
+    0 & 0 & 1 & 0 \\\hline
+    0 & 1 & 0 & 1 \\\hline
+    0 & 1 & 1 & 1 \\\hline
+    1 & 0 & 0 & 0 \\\hline
+    1 & 0 & 1 & 1 \\\hline
+    1 & 1 & 0 & 1 \\\hline
+    1 & 1 & 1 & 1 \\\hline
+  \end{tabular}
+
+  \subsection{Задача 6}
+  Последовательно подставляем значения аргументов из таблицы в данные выражения 
+  и получаем, что ей соответствуют только (б) и (г).
+
+  Ответ: б, г
+
+
+  \subsection{Задача 7}
+  Последовательно подставляем значения аргументов из таблицы в данные выражения 
+  и получаем, что ей соответствуют только (а) и (в).
+
+  Ответ: а, в
+
+
+  \section{Страницы 218 - 219}
+
+  \subsection{Задача 1}
+  Допустим, что Миша сказал только правду, тогда по его словам Миша и Коля не рабивали 
+  окно, значит окно разбил Сергей, но в таком случае Коля тоже сказал только правду,
+  что не допустимо по условию задачи.
+
+  Допущение о том, что только правду сказал Коля приедет к тому же самому противоречию,
+  значит только правду сказал Сергей. Из слов последнего получаем, что окно разбил 
+  Миша, а Сергей этого не делал, значит Коля сказал только ложь, значит по условию задачи
+  Миша сказал в одной числи предложения правду, а в другой - ложь, что не вызывает противоречий.
+
+  Ответ: Миша
+
+  \subsection{Задача 2}
+  Имеем три пары высказываний, в каждой из которох верно только одно:
+
+  \begin{itemize}
+    \item $ A_1 $ -- "Наташа заняла первое место"
+    \item $ A_2 $ -- "Маша заняла второе место"
+    \item $ B_1 $ -- "Люда заняла второе место"
+    \item $ B_2 $ -- "Рита заняла четвертое место"
+    \item $ C_1 $ -- "Рита заняла третье место"
+    \item $ C_2 $ -- "Наташа заняла второе место"
+  \end{itemize}
+
+  Допустим, что верно $ A_1 $, тогда ложны $ A_2 $ и $ C_2 $. Поскольку $ C_2 $ не верно,
+  то $ C_1 $ истино, а значит ложно $ B_2 $ и истино $ B_1 $.
+
+  Из верных высказываний следует, что Наташа заняла первое место, Рита -- третье,
+  а Люда~-- второе. Оставшееся четвертое место уходит Маше.
+
+  Допустим обратное: $ A_1 $ ложно. Тогда $ A_2 $ истино, а $ B_1 $ не верно, значит
+  верно $ B_2 $. Из последнего следует, что не верно $ C_1 $, а значит верно $ C_2 $.
+  Однако $ C_2 $ противоречит $ A_1 $, значит изначальное допущение было не верно.
+
+  Ответ: Наташа - 1, Люда - 2, Рита - 3, Маша - 4.
+
+  \subsection{Задача 5}
+  Построим таблицу, в которой строкам соответствуют роли, а стольбцам -- люди:
+
+  \rule{0cm}{0.3cm}
+
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+             & Михаил & Сергей & Виктор \\ \hline
+    Командир &        &        &        \\ \hline
+    Механик  &        &        &        \\ \hline
+    Радист   &        &        &        \\ \hline
+  \end{tabular}
+
+  \rule{0cm}{0.3cm}
+
+
+  Допустим, что верно первое утверждение, тогда таблица нанет заполняться так:
+
+  \rule{0cm}{0.3cm}
+
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+             & Михаил & Сергей & Виктор \\ \hline
+    Командир & 1      &        & 1      \\ \hline
+    Механик  &        & 1      &        \\ \hline
+    Радист   &        &        & 0      \\ \hline
+  \end{tabular}
+
+  \rule{0cm}{0.3cm}
+
+  Однако, командиром в команде может быть только один, значит изначальное допущение было неверно.
+
+  Допустим теперь, что верно второе утверждение. Тогда таблица примет такой вид:
+
+  \rule{0cm}{0.3cm}
+
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+             & Михаил & Сергей & Виктор \\ \hline
+    Командир & 0      & 0      & 1      \\ \hline
+    Механик  & 1      & 0      & 0      \\ \hline
+    Радист   & 0      & 1      & 0      \\ \hline
+  \end{tabular}
+
+  \rule{0cm}{0.3cm}
+
+  Противоречий не возникает, но необходимо рассмотреть остальные варианты допущений.
+
+  Пусть верно третье утверждение. Таблица примет такой вид:
+
+  \rule{0cm}{0.3cm}
+
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+             & Михаил & Сергей & Виктор \\ \hline
+    Командир & 0      &        & 1      \\ \hline
+    Механик  &        & 1      &        \\ \hline
+    Радист   &        &        & 1      \\ \hline
+  \end{tabular}
+
+  \rule{0cm}{0.3cm}
+  
+  Однако, виктор не может быть одновременно и командиром и мехимиком, значит изначальное допущение было неверно.
+
+  Пусть верно последнее утверждение. Таблица примет такой вид:
+
+  \rule{0cm}{0.3cm}
+
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+             & Михаил & Сергей & Виктор \\ \hline
+    Командир & 0      &        & 0      \\ \hline
+    Механик  &        & 1      &        \\ \hline
+    Радист   &        &        & 0      \\ \hline
+  \end{tabular}
+
+  \rule{0cm}{0.3cm}
+
+  Однако, в таком случае Виктор может быть только механиком,
+  хотя эта роль уже занята Сергеем, значит изначальное допущение было неверно.
+
+  \rule{0cm}{0.3cm}
+
+  Ответ: Виктор -- командир, Михаил -- Механик, Сергей -- Радист.
+
+
 
   \pagebreak
 
   \part{Сообщение}
-  \section{<<Графы в практических задачах>>}
-  
+  \section{<<Постфиксная и инфиксная формы записи выражений>>}
+  \subsection{Введение}
+  Инфиксная нотация знакома и привычна подовляющему большинству населения 
+  Земли, потому что именно она является общепринятой и используется повсеместно.
+  Однако это не единствеый спозоб записи выражений, помимо других существуют 
+  префиксная и постфиксная формы записи. В данном тексте мы подробнее рассмотрим 
+  последнюю из них, так же называемую "Обратная польская нотация".
+
+  \subsection{Описание}
+  В привычной нам инфиксной форме записи бнарные операторы записываются между 
+  их аргументами, а функции записываются перед списком аргументов, окруженных 
+  кобками и разделенных запятыми, так, например, произведение синуса трех и суммы 
+  четырех и пяти будет записано как "sin(3) * (4 + 5)". Во избежание неоднозначности 
+  в этой нотации присутствуют приоритеты операторов указывающие на порядок вычислений,
+  а так же скобки, позволяющие при необходимости изменять этот порядок.
+
+  В обратной польской нотации же все функции и бинарные операторы записываются 
+  справа от своих аргументов без каких-либо скобок. Так, описаное выше выражение 
+  будет записано как "3 sin 4 5 + *". Значительным преимуществом данной нотации 
+  является ее одназначность без необходимости введения приоритета операторов и
+  скобок, отсутствие которых делает постфикстую форму записи более компактной 
+  и обеспчивает гораздо более простой алгоритм ее разбора и вычисления.
+
+  \subsection{Вычисление} 
+  Рассмотрим наиболее простой алгоритм вычисления выражения, записанного 
+  постфиксной формой записи, использующий стек в качестве изменяемого состояния
+  (Предположим, что текст уже разбит на токены):
+
+  \begin{itemize}
+    \item Пока есть токены для чтения:
+      \begin{itemize}
+        \item Читаем один токен
+        \item Если это число, то добавляем его в стрек.
+        \item Если это функция или оператор, то применям ее/его к необходимому 
+          количеству значений, изымаемых из стека. Результат применения запиываем в стек.
+      \end{itemize}
+    \item Если выражение было записано корректно, то по окончанию списка тоекнов 
+      в стеке должно остаться одно число, являющееся результатом вычисления.
+  \end{itemize}
+
+  \subsection{Перевод из инфиксной нотации в постфиксную}
+  Рассмотрим наболее часто использующийся алгоритм перевода инфиксной нотации в 
+  обратную польскую (Предположим, что тест уже разбит на токены). Для его реализации
+  используется стек операций.
+
+  Описание алгоритва:
+  \begin{itemize}
+    \item Пока есть токен для чтения:
+      \begin{itemize}
+        \item Читаем один токен
+        \item Если это число или постфиксная функция, добавляем его к выходному выражению.
+        \item Если это префиксная функция, помещаем его в стек.
+        \item Если это открывающая скобка, помещаем его в стек.
+        \item Если это закрывающая скобка:
+          \begin{itemize}
+            \item До тех пор, пока верхним элементом стека не станет открывающая 
+              скобка:
+              \begin{itemize}
+                \item Выталкиваем элементы из стека в выходное выражение. 
+              \end{itemize}
+            \item Если стек закончился раньше, чем встретилась открывающая 
+              скобка, то выражение записано некорректно.
+						\item Появление непарной скобки также свидетельствует об ошибке.
+            \item Открывающая скобка удаляется из стека. 
+          \end{itemize}
+				\item Если символ является бинарной операцией о1, тогда:
+					\begin{enumerate}
+						\item
+							\begin{itemize}
+								\item Пока на вершине стека префиксная функция,
+									или операция на вершине стека приоритетнее o1,
+									или операция на вершине стека левоассоциативная с приоритетом как у o1:
+									\begin{itemize}
+										\item выталкиваем верхний элемент стека в выходную строку;
+									\end{itemize}
+							\end{itemize}
+						\item Помещаем операцию o1 в стек.
+					\end{enumerate}
+      \end{itemize}
+		\item По окончанию списка токенов:
+			\begin{itemize}
+				\item	Если в стеке есть что-либо кроме скобок, значит в выражении не согласованы скобки.
+				\item Выталкиваем все токены из стека в выходное выражение. 
+			\end{itemize}
+	\end{itemize}
+
+	\subsection{Недостатки и ограничения}
+	Постфиксная нотация имеет так же и определенные недостатки, главные из которых:
+	\begin{itemize}
+		\item Неудобство чтеня для подовляющего большинства людей. Как уже было сказано,
+			общепринятой является инфиксная нотация.
+		\item Отсутствие возможности использовать операции, являющиеся одновременно и унарными,
+			и банрными. Так, например, невозможно использовать одновременно для вычитания и для 
+			смены знака числа. Для решения этой проблемы необходимо либо использовать разные 
+			символы для инарной и бинарной функции, либо выражать бинарную функцию через унарную
+			или наоборот. В случае с минусом можно, например, заменить ``-3'' на ``0 - 3''.
+	\end{itemize}
 \end{document}
