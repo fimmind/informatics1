@@ -1,0 +1,78 @@
+\section{Страницы 74 - 75}
+\subsection{Задача 5}
+Решаем методом перебора.
+
+Ответ: ББААВА, БГАВА
+
+\subsection{Задача 6}
+Решаем методом перебора.
+
+Ответ: АДААВВ, АВГАВВ, АВВВААВВ, АВВБАВВ
+
+\subsection{Задача 9}
+\begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+\node [circle, draw=black] {}
+  child { 
+    node [circle, draw=black] {А}
+    edge from parent node[above left] {0}
+  }
+  child {
+    node [circle, draw=black] {}
+    child { 
+      node [circle, draw=black] {Б}
+      edge from parent node[above left] {0}
+    }
+    child {
+      node [circle, draw=black] {}
+      child {
+        node [circle, draw=black] {В}
+      edge from parent node[above left] {0}
+      }
+      child {
+        node [circle, draw=black] {Г}
+      edge from parent node[above right] {1}
+      }
+      edge from parent node[above right] {1}
+    }
+    edge from parent node[above right] {1}
+  };
+\end{tikzpicture}
+
+Построение дерева по кодовой таблице показывает, что наименьшее значения для Г,
+при котором выполнеяется условие Фано -- это 111.
+
+Ответ: 111
+
+\subsection{Задача 10}
+\begin{tikzpicture}[level/.style={sibling distance=100mm/#1}, scale=0.6]
+\node [circle, draw=black] {}
+  child { 
+    node [circle, draw=black] {А}
+    edge from parent node[above left] {0}
+  }
+  child { 
+    node [circle, draw=black] {}
+    child { 
+      node [circle, draw=black] {}
+      child { 
+        node [circle, draw=black] {Б}
+        edge from parent node[above left] {0}
+      }
+      child { 
+        node [circle, draw=black] {В}
+        edge from parent node[above right] {1}
+      }
+      edge from parent node[above left] {0}
+    }
+    child { 
+      node [circle, draw=black] {Г}
+      edge from parent node[above right] {1}
+    }
+    edge from parent node[above right] {1}
+  };
+\end{tikzpicture}
+
+Построение дерева по кодовой таблице показывает, что наименьшее значения для Г,
+при котором выполнеяется условие Фано -- это 11.
+
+Ответ: 11
